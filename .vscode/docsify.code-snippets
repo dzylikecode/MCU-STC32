@@ -24,27 +24,33 @@
   "link repos": {
     "scope": "markdown",
     "prefix": "@linkpg",
-    "body": ["<a class=\"GitHub\" href=\"${1:path}\">${2:title}</a>", "$0"],
+    "body": ["<a class=\"Repos\" href=\"${1:path}\">${2:title}</a>", "$0"],
     "description": "link to github repository"
   },
   "link blank repos": {
     "scope": "markdown",
     "prefix": "@linkpg",
     "body": [
-      "<a class=\"GitHub\" target=\"_blank\" href=\"${1:path}\">${2:title}</a>",
+      "<a class=\"Repos\" target=\"_blank\" href=\"${1:path}\">${2:title}</a>",
       "$0"
     ],
     "description": "link to github repository, blank"
   },
-  "code blog": {
+  "code block": {
     "scope": "markdown",
-    "prefix": "@codeblog",
+    "prefix": "@codeblock",
     "body": ["```${1:language}", "$2", "```", "$0"],
-    "description": "link to code blog"
+    "description": "code block"
+  },
+  "mermaid": {
+    "scope": "markdown",
+    "prefix": "@mermaid",
+    "body": ["```${mermaid}", "", "$1", "```", "$0"],
+    "description": "mermaid"
   },
   "highlight text": {
     "scope": "markdown",
-    "prefix": "@text",
+    "prefix": "@highlight",
     "body": ["==$1==$0"],
     "description": "highlight text"
   },
@@ -56,8 +62,14 @@
   },
   "note": {
     "scope": "markdown",
-    "prefix": "@ref",
+    "prefix": "@note",
     "body": [" [-$1] $0"],
     "description": "note"
+  },
+  "expose": {
+    "scope": "markdown",
+    "prefix": "@expose",
+    "body": ["", "<docs-expose>", "", "$1", "", "</docs-expose>", ""],
+    "description": "expose"
   }
 }

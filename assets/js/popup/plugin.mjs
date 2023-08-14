@@ -278,7 +278,7 @@ function mapToVirtual(fileRoute) {
   return {
     virtualName,
     repos: { docs, cache, code: match.code, ext: match.ext },
-    global: match.global,
+    global: match.global ?? [],
     remoteRepos: match.remoteRepos ?? [],
   };
 

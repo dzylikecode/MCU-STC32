@@ -56,22 +56,22 @@
         auto2top: true, // 自动跳转至顶部
       };
       window.gCodeDocMaps = [
-        // {
-        //   docs: "docs/",
-        //   cache: "assets/cache/",
-        //   code: "https://github.com/DDLife/scripts-DST/blob/main/",
-        //   ext: ".lua",
-        //   exclude: ["README", "SUMMARY"],
-        //   global: ["GLOBAL"],
-        //   remoteRepos: [
-        //     {
-        //       docs: "https://DDLife.github.io/zh/#/ref/",
-        //       cache: "https://DDLife.github.io/zh/assets/cache/",
-        //       code: "https://github.com/DDLife/zh/blob/main/code/",
-        //       ext: ".lua",
-        //     },
-        //   ],
-        // },
+        {
+          docs: "docs/",
+          cache: "assets/cache/",
+          code: "https://github.com/DDLife/scripts-DST/blob/main/",
+          ext: ".lua",
+          exclude: ["README", "SUMMARY"],
+          // global: ["GLOBAL"],
+          remoteRepos: [
+            // {
+            //   docs: "https://DDLife.github.io/zh/#/ref/",
+            //   cache: "https://DDLife.github.io/zh/assets/cache/",
+            //   code: "https://github.com/DDLife/zh/blob/main/code/",
+            //   ext: ".lua",
+            // },
+          ],
+        },
       ];
     </script>
     <!-- Docsify v4 -->
@@ -94,7 +94,7 @@
         textColor: "#fff",
       });
     </script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
     <script type="module" src="./assets/js/docsify.mjs"></script>
   </body>
 </html>
