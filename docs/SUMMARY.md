@@ -1,4 +1,5 @@
 - [:boat:](/docs/README.md)
 - [HAL](/docs/HAL.md)
 - [env](/docs/env.md)
+- [clock tree](/docs/clock-tree.md)
 - [GPIO](/docs/GPIO.md)

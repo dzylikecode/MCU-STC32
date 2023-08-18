@@ -1,5 +1,7 @@
 # environment
 
+STM32CubeMX + PlatformIO + VSCode
+
 ## STM32CubeMX
 
 1. 工程初步建立
@@ -81,6 +83,6 @@ File > new project
 
 ?> 点击 Generate Code 生成工程
 
-## Reference
+## References
 
 - [使用 VSCode+PlatformIO+HAL+CubeMX+正点原子库开发 STM32F407ZGT6_vscode 外星人插件\_Kenyon_Lv 的博客-CSDN 博客](https://blog.csdn.net/qq_36807337/article/details/123030937)
