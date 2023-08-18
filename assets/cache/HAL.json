@@ -1,1 +1,1 @@
-{"id":"HAL","deps":["HAL-file-structure"],"as":{},"info":"","extern":[{"id":"CMSIS 标准","info":""},{"id":"file structure","info":""},{"id":"API","info":""},{"id":"注意事项","info":""}],"local":[]}
+{"id":"HAL","deps":["HAL-file-structure"],"as":{},"info":"","extern":[{"id":"CMSIS 标准","info":""},{"id":"file tree","info":""},{"id":"API","info":""},{"id":"HAL 库应用程序文件结构","info":""},{"id":"用户配置文件 stm32f4xx_hal_conf.h","info":""},{"id":"弱定义","info":""},{"id":"stm32f4xx_hal.c","info":""},{"id":"HAL 库中断处理","info":""},{"id":"注意事项","info":""}],"local":[]}
