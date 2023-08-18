@@ -38,7 +38,7 @@
     <div id="app"></div>
     <script>
       window.gUserName = "dzylikecode";
-      window.gReposName = "template-docsify";
+      window.gReposName = "MCU-STM32";
       window.gBranchName = "master";
     </script>
     <!-- 一些常用的全局变量 -->
@@ -51,8 +51,8 @@
         loadSidebar: "SUMMARY.md",
         homepage: "/docs/README.md",
         alias: {
-          "/.*/NAVIGATION.md": "/docs/NAVIGATION.md",
-          "/.*/SUMMARY.md": "/docs/SUMMARY.md",
+          ".*/NAVIGATION.md": "/docs/NAVIGATION.md",
+          ".*/SUMMARY.md": "/docs/SUMMARY.md",
         },
         subMaxLevel: 3, // 子目录最大层级, 有助于显示 markdown 的层级
         auto2top: true, // 自动跳转至顶部
@@ -75,7 +75,6 @@
           ],
         },
       ];
-      window.location.hash = "#/docs/README.md";
     </script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>

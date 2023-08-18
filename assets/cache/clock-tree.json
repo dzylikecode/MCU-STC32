@@ -1,1 +1,1 @@
-{"id":"clock-tree","deps":[],"as":{},"info":"","extern":[],"local":[]}
+{"id":"clock-tree","deps":[],"as":{},"info":"","extern":[],"local":[{"id":"输入时钟源","info":"\n\n可分为外部时钟源和内部时钟源\n\n"}]}

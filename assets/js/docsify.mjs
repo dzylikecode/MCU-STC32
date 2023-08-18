@@ -22,6 +22,11 @@ window.$docsify.markdown = {
   },
 };
 window.$docsify.plugins = docsifyPlugins.concat(window.$docsify.plugins || []);
+// window.$docsify.plugins.push((hook) => {
+//   hook.mounted(() => {
+//     if (window.location.hash == "#/") window.location.hash = "#/docs/README.md";
+//   });
+// });
 
 const originMarkdown = window.$docsify?.markdown || {};
 window.$docsify.markdown = newMarkdown;
