@@ -35,6 +35,8 @@ File > new project
 1. 配置系统时钟
 2. 配置 SYSTICK,AHB,APB1 和 APB2 的分频系数
 
+?> 168MHz 是官方推荐使用的最高的稳定时钟频率
+
 ### 配置系统时钟
 
 ![](assets/2023-08-18-19-58-01.png)
