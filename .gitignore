@@ -1,1 +1,7 @@
 temp
+.pio
+project/**/.vscode
+project/*/include/README
+project/*/lib/README
+project/*/src/README
+project/*/test/README
