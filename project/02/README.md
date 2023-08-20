@@ -30,3 +30,7 @@ GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
 ```
 
 通过`keyHasDown`消除多次连续按下
+
+改动文件:
+
+- main.c

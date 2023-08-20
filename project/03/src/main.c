@@ -28,7 +28,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-typedef int bool;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -49,18 +49,15 @@ typedef int bool;
 #define KEY2 HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin)
 #define KEY_UP HAL_GPIO_ReadPin(KEY_UP_GPIO_Port, KEY_UP_Pin)
 
-#define IsDownKey0() (KEY0 == 0)
-#define IsDownKey1() (KEY1 == 0)
-#define IsDownKey2() (KEY2 == 0)
-#define IsDownKeyUP() (KEY_UP == 1)
-
+#define IsDownKey0() (KEY0 == GPIO_PIN_RESET)
+#define IsDownKey1() (KEY1 == GPIO_PIN_RESET)
+#define IsDownKey2() (KEY2 == GPIO_PIN_RESET)
+#define IsDownKeyUP() (KEY_UP == GPIO_PIN_SET)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define true 1
-#define false 0
-#define not !
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -109,37 +106,14 @@ int main(void) {
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  bool keyHasDown = false;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
     /* USER CODE END WHILE */
-    if (not keyHasDown) {
-      if (IsDownKeyUP()) {
-        ToggleBeep();
-        keyHasDown = true;
-      }
-      if (IsDownKey0()) {
-        ToggleLED(0);
-        keyHasDown = true;
-      }
-      if (IsDownKey1()) {
-        ToggleLED(1);
-        keyHasDown = true;
-      }
-      if (IsDownKey2()) {
-        ToggleLED(0);
-        ToggleLED(1);
-        keyHasDown = true;
-      }
-    } else {
-      if (!IsDownKeyUP() && !IsDownKey0() && !IsDownKey1() && !IsDownKey2()) {
-        keyHasDown = false;
-      }
-    }
-    HAL_Delay(10);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -165,8 +139,8 @@ void SystemClock_Config(void) {
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
@@ -188,7 +162,36 @@ void SystemClock_Config(void) {
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+  // ! can't use HAL_Delay here for debounce
+  // HAL_Delay(20);
+  switch (GPIO_Pin) {
+    case KEY_UP_Pin:
+      if (IsDownKeyUP()) {
+        ToggleBeep();
+      }
+      break;
+    case KEY0_Pin:
+      if (IsDownKey0()) {
+        ToggleLED(0);
+      }
+      break;
+    case KEY1_Pin:
+      if (IsDownKey1()) {
+        ToggleLED(1);
+      }
+      break;
+    case KEY2_Pin:
+      if (IsDownKey2()) {
+        ToggleLED(0);
+        ToggleLED(1);
+      }
+      break;
+    default:
+      break;
+  }
+  __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin);  // clear interrupt flag in case of bounce
+}
 /* USER CODE END 4 */
 
 /**

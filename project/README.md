@@ -1,5 +1,7 @@
 # project
 
+STM32F407ZG6
+
 ## set up
 
 1. StmCubeMx 生成配置代码, 保留`*.ioc`文件
@@ -44,3 +46,15 @@ debug_tool  = stlink
 ```
 
 ?> 写代码尽量在注释的 begin 与 end 中间, 这些部分的代码不会被 cubeMX 重新生成的时候擦除
+
+## LED
+
+![](assets/2023-08-20-20-16-04.png)
+
+## Beep
+
+![](assets/2023-08-20-21-17-53.png)
+
+## Key
+
+![](assets/2023-08-20-19-21-34.png)

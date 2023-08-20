@@ -172,3 +172,4 @@ GPIO 端口上拉/下拉寄存器 (GPIOx_PUPDR)
 ## References
 
 - [如何理解 STM32 单片机引脚的复用功能? - 知乎](https://zhuanlan.zhihu.com/p/32346166)
+- [【超详细】output level 和 pull up/ pull down 的真正区别\_gpio output level_Xav Zewen 的博客-CSDN 博客](https://blog.csdn.net/weixin_39591031/article/details/110568014)

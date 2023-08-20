@@ -5,3 +5,6 @@ project/*/include/README
 project/*/lib/README
 project/*/src/README
 project/*/test/README
+.mxproject
+Core
+project/*/.gitignore
